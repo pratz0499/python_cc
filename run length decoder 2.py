@@ -2,16 +2,19 @@ class UI:
     def input(self):
         n=int(input("Enter the number of sequences:"))
         z=list_of_lists()
+
         for i in range(n):
             m=int(input("Enter the size of the sequence:"))
             a=list_of_integers()
-            k=int(input("Enter the sequence:"))
+            for j in range(m):
+                k=int(input("Enter the element:"))
+                a.loi.append(k)
+            z.list_1.append(a.loi)
+        return z
 
-        while len(a.loi)==m:
-            return z
 
-        def output:
-            
+
+
 
 class list_of_integers:
     def __init__ (self):
@@ -22,11 +25,37 @@ class list_of_integers:
 
 class list_of_lists:
     def __init__(self):
-        self.list=[]
+        self.list_1=[]
 
-    def add_lol(self,x):
-        self.list.append(x)
+    def add(self,loi):
+        self.list_1.append(loi)
 
 
-p=UI()
-s=p.input()
+
+x=UI()
+s=x.input()
+
+for i in range(len(s.list_1)):
+    seq = s.list_1[i]
+    decomp_seq = list()
+    j =0
+    while j < len(seq):
+        if j<=(len(seq)-2):
+            if (seq[j] == 0) and (seq[j+1] == 0):
+                print('0', end=' ')
+                decomp_seq.append(int(0))
+                j=j+1
+            elif (seq[j] == 0) and j<=(len(seq)-3):
+                rep = seq[j+1]
+                val = seq[j+2]
+                for k in range (rep):
+                    decomp_seq.append(int(val))
+                    print(val, end=' ')
+                j = j + 2
+            else:
+                decomp_seq.append(int(seq[j]))
+                print(seq[j], end=' ')
+        else:
+            decomp_seq.append(int(seq[j]))
+            print(seq[j], end=' ')
+        j = j+1
