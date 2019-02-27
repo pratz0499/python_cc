@@ -1,0 +1,11 @@
+n=int(input())
+for x in range(0,10):
+	a=x^n
+	l=[]
+	l.append(a)
+
+	for i in l:
+		dif=l[i+1]-l[i]
+		l.append(dif)
+
+print(l)
