@@ -1,6 +1,6 @@
+import pdb; pdb.set_trace()
 def ipt():
         n=int(input())
-#import pdb; pdb.set_trace()
         i=0
         j=0
         l=[]
@@ -13,17 +13,13 @@ def ipt():
 
 
 def pattern(l):
-        length=len(l)
-        for j in range(length-1):
-                dif=(l[j+1])-(l[j])
-                l[j]=dif
-        #l.insert(j,dif)
-
-
-
+        [l[i+1]-l[i] for i in range(len(l)-1)]
         l.pop(-1)
-        pattern (l)
-        print(l)  
+        while(len(l)!=2):
+                pattern (l)
+                print(l)
+
+        print(l)
 
 z=ipt()
 a=pattern(z)
