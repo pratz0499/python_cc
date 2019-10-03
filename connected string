@@ -1,0 +1,44 @@
+def connected():
+	server=input("server =")
+	dbname=input("db =")
+	usr=input("user =")
+	passs=input("passs =")
+
+	return("server=%s,dbname=%s,usr=%s,passs=%s"%(server,dbname,usr,passs))
+
+
+
+def cstodic(connected):
+	dictionary={}
+
+	for i in connected.split(","):
+		key,value=i.split("=")
+		dictionary[key]=value
+
+	return dictionary
+
+
+def dictocs(cstodic):
+	s=str(cstodic)
+
+	p=(s.replace(':','=') and s.replace('"',''))
+
+	return p
+
+	
+
+	
+
+
+
+
+
+
+
+
+x=connected()
+y=cstodic(x)
+z=dictocs(y)
+print(x)
+print(y)
+print(z)
