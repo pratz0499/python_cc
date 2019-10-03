@@ -1,7 +1,7 @@
 import requests
 import json
 count=0
-for j in range(1,10):
+for j in range(1,100):
     params = (
         ('page', str(j)),
     )
